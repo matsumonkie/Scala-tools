@@ -8,7 +8,7 @@ package tools
  */
 object Echo {
 
-  private def formatStr (value: Any) : String = "[" + value + "]"
+  private def formatStr (value: Any) : String = s"[$value]"
 
   def apply (varNames: Any*) {
     if (varNames.length == 2) {

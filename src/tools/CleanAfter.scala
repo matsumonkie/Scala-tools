@@ -6,13 +6,13 @@ package tools
  */
 object CloseAfter {
 
-  def apply[A <: Closable](c: A)(f : (A) => Unit ) =
+  def apply[A <: Closable](c: A) (f : (A) => Unit) =
     try { f(c) } finally { c.close() }
 }
 
 trait Closable {
 
-  abstract def close()
+  def close()
 
 }
 
