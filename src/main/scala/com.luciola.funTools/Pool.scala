@@ -27,8 +27,6 @@ class Pool[T <: Creatable] {
 
 }
 
-
 trait Creatable {
   def create(): Creatable
 }
-

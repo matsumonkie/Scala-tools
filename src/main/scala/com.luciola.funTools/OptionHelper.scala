@@ -1,6 +1,5 @@
 package com.luciola.funTools
 
-
 /**
  * helper class dealing with Option
  *
@@ -18,9 +17,7 @@ object OptionHelper {
     def ifEmpty (f: => Any) = { if (x.isEmpty) f }
 
     def ifDefined (f: T => Unit) = { if (x.isDefined) f(x.get) }
-
   }
 
   implicit def OptionOps[T](o: Option[T]): OptionOps[T] = new OptionOps(o)
-
 }

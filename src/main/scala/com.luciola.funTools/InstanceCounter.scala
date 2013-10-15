@@ -15,7 +15,6 @@ import scala.collection.mutable
 
 trait InstanceCounter {
 
-  // on instanciation, increment nb of instances of current class
   private val className: String = getClass().getSimpleName
   InstanceCounter.incInstances(className)
 

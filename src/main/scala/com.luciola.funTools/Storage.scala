@@ -1,5 +1,8 @@
 package com.luciola.funTools
 
+/**
+ *
+ */
 object Storage {
   class RichWholeNumber(wrapped: Long) {
     def byte      = bytes
@@ -22,5 +25,4 @@ object Storage {
 
   implicit def intToStorageUnitableWholeNumber(i: Int) = new RichWholeNumber(i)
   implicit def longToStorageUnitableWholeNumber(l: Long) = new RichWholeNumber(l)
-
 }

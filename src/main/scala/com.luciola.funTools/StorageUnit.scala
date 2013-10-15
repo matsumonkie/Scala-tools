@@ -1,4 +1,5 @@
 package com.luciola.funTools
+
 object StorageUnit {
   val infinite = new StorageUnit(Long.MaxValue)
 
