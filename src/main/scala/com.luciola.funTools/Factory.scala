@@ -20,7 +20,6 @@ trait Factory[T <: Instantiable] {
 
   private var ctorMethods = Map[String, MethodMirror]()
 
-
   def create(classToInstantiate: String): Option[T] = {
     var res: Option[T] = None
 
@@ -36,10 +35,8 @@ trait Factory[T <: Instantiable] {
         }
       }
     }
-
     res
   }
-
 
   /**
    * return the constructor of class to instantiate as a method
@@ -58,16 +55,13 @@ trait Factory[T <: Instantiable] {
     }
   }
 
-
   private def isInstantiable[T: TypeTag](thisType: Type) = {
     thisType <:< typeOf[Instantiable]
   }
 
-
   private def saveCtorMethod(className: String, ctorMethod: MethodMirror) {
     ctorMethods += (className -> ctorMethod)
   }
-
 
   private def getSavedCtorMethod(className: String): Option[MethodMirror] = {
     ctorMethods.get(className)
