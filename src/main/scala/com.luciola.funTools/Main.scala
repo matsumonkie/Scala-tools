@@ -1,6 +1,8 @@
 package com.luciola.funTools
 
 import foo.luciola.funTools.Timer
+import scala.Function
+import foo.luciola.funTools.Test._
 
 object Main extends App {
 
@@ -109,11 +111,41 @@ object Main extends App {
     }
   }
 */
-}
+/*  import LateVal._
 
-class Animal extends Instantiable {
-  def whoami = Echo("Animal")
+  Echo("new LateVal")
+  val foo = new LateVal[Int]
+  Echo("assign 3")
+  foo.assign(3)
+  Echo(foo.get)
+  Echo(Some(foo) )
+  Echo("+2")
+  Echo(foo + 2)
+*/
+/*
+  val node = Node(1) (
+    Node(2),
+    Node(3) (
+      Node(4),
+      Node(5),
+      Node(6)
+    )
+  )*/
+  import foo.luciola.funTools.Conv._
+  val node2 = Node(1) {
+    Node(2) :: Node(3) { Node(4) }
+  }
+  val node3 = Node(1) (
+    Node(2) :: Node(3) ( Node(4) )
+  )
+
+
+
+//  println(Node(4) :: Node(3))
+//  4.head
+
+
+  println(node2)
+    println(node3)
+
 }
-class Bird extends Animal { override def whoami = Echo("Bird") }
-class Dog extends Animal { override def whoami = Echo("Dog") }
-class Car {}
