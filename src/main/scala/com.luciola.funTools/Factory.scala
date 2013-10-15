@@ -14,6 +14,7 @@ import java.lang.reflect.Constructor
  *
  */
 
+trait Instantiable
 
 trait Factory[T <: Instantiable] {
 
