@@ -23,13 +23,11 @@ object Timer {
   }
 
   def apply[T](functionName: String)(f: => T) : Long = {
-    val t = new Timer
+    val timeBeforeFunctionExecution = now()
     f
-    val duration = now() - t.startTime
+    val duration = now() - timeBeforeFunctionExecution
     println(s"$functionName took [ $duration ] ms")
     duration
   }
 
 }
-
-final class Timer(private val startTime: Long = now()) {}
