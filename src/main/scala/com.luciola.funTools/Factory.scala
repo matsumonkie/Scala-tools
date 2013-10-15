@@ -7,11 +7,8 @@ import java.lang.reflect.Constructor
  * dynamically instantiate a class from its name e.g:
  *
  * class Bird extends Instantiable
- *
  * class BirdFactory extends Factory[Bird]
- *
  * val myBird: Bird = new BirdFactory().create("my.package.com.Bird")
- *
  */
 
 trait Instantiable

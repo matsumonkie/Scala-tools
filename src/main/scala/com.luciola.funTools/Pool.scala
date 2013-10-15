@@ -1,14 +1,17 @@
 package com.luciola.funTools
 
 import scala.reflect.runtime.{universe => ru}
-import scala.collection.mutable
+import scala.collection.mutable.MutableList
 
-class Pool[T <: Creatable] {
+/**
+ * TODO: make this class works
+ */
+class Pool[T <: Recyclable] {
 
-  private val availableResources = mutable.ListBuffer[T]()
+  private val availableResources = MutableList[T]()
 
   def recycle(resToRecycle: T) {
-    resToRecycle +=: availableResources
+    availableResources +=: resToRecycle
   }
 
   def getResource[Y: ru.TypeTag](): T = {
@@ -27,6 +30,6 @@ class Pool[T <: Creatable] {
 
 }
 
-trait Creatable {
-  def create(): Creatable
+trait Recyclable {
+  def recycle()
 }

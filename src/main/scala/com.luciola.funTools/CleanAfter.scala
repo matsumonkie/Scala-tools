@@ -13,6 +13,4 @@ object CloseAfter {
 trait Closable {
 
   def close()
-
 }
-
