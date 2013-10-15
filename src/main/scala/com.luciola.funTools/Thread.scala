@@ -1,6 +1,5 @@
 package com.luciola.funTools
 
-
 /**
  * Class that simplifies the syntax for creating/running thread.
  * e.g:
@@ -18,5 +17,4 @@ package com.luciola.funTools
 object Thread {
 
   def apply(f: => Unit) : Runnable = new Runnable() { def run = f }
-
 }

@@ -4,7 +4,7 @@ import scala.util.Success
 
 /**
  * execute a function that might rises an exception
- * if it does, return default
+ * if it does, return a default value
  *
  * ex:
  * TryOr(1) { "1".toInt } will return 1
@@ -14,11 +14,11 @@ import scala.util.Success
 object TryOr {
 
   def apply[T](fallback: T)(f: => T): T = scala.util.Try(f) getOrElse fallback
-
 }
 
 /**
- * same as TryOr except that it wraps the return value in an Optional
+ * same as TryOr except that it wraps the return value in an Optional and there is
+ * default value here
  *
  * e.g:
  *
@@ -37,4 +37,3 @@ object TryOpt {
     }
   }
 }
-
