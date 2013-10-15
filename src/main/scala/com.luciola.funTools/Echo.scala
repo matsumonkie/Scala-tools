@@ -1,7 +1,7 @@
 package com.luciola.funTools
 
 /**
- * print variables with a simple yet readable format
+ * print variables with a simple format
  *
  * ex: Echo("woodpecker", woodpecker.name)
  * will print "woodpecker [woody]"
